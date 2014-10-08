@@ -20,7 +20,7 @@ void resetall() {
 
 #ifdef OS_Windows
 WORD COLOR_DEFAULT = FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE | FOREGROUND_INTENSITY;
-HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+HANDLE hConsole;// = GetStdHandle(STD_OUTPUT_HANDLE);
 
 CONSOLE_SCREEN_BUFFER_INFO getsize() {
 	CONSOLE_SCREEN_BUFFER_INFO csbi;
@@ -28,6 +28,11 @@ CONSOLE_SCREEN_BUFFER_INFO getsize() {
 	return csbi;
 }
 #endif
+void init(){
+        #ifdef OS_Windows
+        hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+        #endif
+}
 
 int getwidth() {
 #ifdef OS_Windows
@@ -277,3 +282,5 @@ int waitkey(const char* prompt) {
 	return c;
 #endif
 }
+
+

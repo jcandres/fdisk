@@ -3,20 +3,25 @@
 #include "console.h"
 
 int getkey(){
-        return (char)getchar();
+        return (char)getch();
 }
 
 int main() {
+        init();
         int x, y;
         x=y=10;
         gotoxy(20,20);
         printf("FFFFFFFFF");
         showcursor(0);
-        //clear(21, 20);
 
-        //msleep(1000000);
+        for (int i=0; i<getwidth(); i++)
+                for (int j=0; j<getheight(); j++){
+                        setbg(i+j);
+                        clear(i,j);
+                        }
+
         int k;
-        while (k = waitkey("kaskask? ")) {
+        while ((k = waitkey(""))) {
                 if (k==65) y--;
                 if (k==66) y++;
                 if (k==67) x++;
@@ -27,7 +32,7 @@ int main() {
                 clrscr();
                 gotoxy(x, y);
                 setrgb(rand() %16,rand() %16 );
-                printf("%i", k);
+                printf("%i %c", k,k);
 
 
         }

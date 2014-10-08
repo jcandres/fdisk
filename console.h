@@ -45,6 +45,7 @@
 #define COLOR_BRIGHTYELLOW  (COLOR_BRIGHT | COLOR_YELLOW)
 #define COLOR_GRAY          (COLOR_BRIGHT | COLOR_BLACK)
 
+
 /* Resets all terminal parameters. */
 void resetall();
 
@@ -92,5 +93,9 @@ void showcursor(int show);
 /* Wait for a key to be pressed in the terminal.
 Written by user firedraco @ http://cplusplus.com/forum */
 int waitkey(const char* prompt); //=""
+
+/* hack to make it windoze-compatible unsing C */
+void init();
+/******************************************************/
 
 #endif // !_CONSOLE_H

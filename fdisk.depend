@@ -29,3 +29,22 @@
 	<stdlib.h>
 	"console.h"
 
+1412791141 source:c:\documents and settings\hrrr\escritorio\fdisk\console.c
+	<string.h>
+	<stdlib.h>
+	<stdio.h>
+	"console.h"
+	<sys/ioctl.h>
+	<stdio.h>
+	<termios.h>
+	<unistd.h>
+	<time.h>
+
+1412791141 c:\documents and settings\hrrr\escritorio\fdisk\console.h
+	<windows.h>
+
+1412791348 source:c:\documents and settings\hrrr\escritorio\fdisk\main.c
+	<stdio.h>
+	<stdlib.h>
+	"console.h"
+
