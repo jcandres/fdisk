@@ -1,0 +1,31 @@
+# depslib dependency file v1.0
+1390671800 source:/home/herror/fdisk/console.cpp
+	<string>
+	<cstdlib>
+	<cstdio>
+	"console.h"
+	<sys/ioctl.h>
+	<stdio.h>
+	<termios.h>
+	<unistd.h>
+	<time.h>
+
+1412785656 /home/herror/fdisk/console.h
+	<windows.h>
+
+1412786569 source:/home/herror/fdisk/console.c
+	<string.h>
+	<stdlib.h>
+	<stdio.h>
+	"console.h"
+	<sys/ioctl.h>
+	<stdio.h>
+	<termios.h>
+	<unistd.h>
+	<time.h>
+
+1412787628 source:/home/herror/fdisk/main.c
+	<stdio.h>
+	<stdlib.h>
+	"console.h"
+
