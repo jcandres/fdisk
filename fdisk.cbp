@@ -17,7 +17,6 @@
 					<Add option="-Wextra" />
 					<Add option="-Wall" />
 					<Add option="-std=c99" />
-					<Add option="-Wall" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -29,6 +28,9 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Linker>
+			<Add option="-lcurses" />
+		</Linker>
 		<Unit filename="console.c">
 			<Option compilerVar="CC" />
 		</Unit>

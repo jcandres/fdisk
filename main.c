@@ -1,43 +1,29 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include "console.h"
-
-int getkey(){
-        return (char)getch();
-}
+#include <curses.h>
+#include "dbg.h" 
 
 int main() {
-        init();
-        int x, y;
-        x=y=10;
-        gotoxy(20,20);
-        printf("FFFFFFFFF");
-        showcursor(0);
+        initscr();
+        raw();
+        noecho();
 
-        for (int i=0; i<getwidth(); i++)
-                for (int j=0; j<getheight(); j++){
-                        setbg(i+j);
-                        clear(i,j);
-                        }
+        keypad(stdscr, TRUE);
+        move(20,20);
+        printw("KASKAS");
+        box(stdscr, ACS_VLINE, ACS_HLINE);
 
-        int k;
-        while ((k = waitkey(""))) {
-                if (k==65) y--;
-                if (k==66) y++;
-                if (k==67) x++;
-                if (k==68) x--;
-                if (k=='q') break;
+        while (1) {
+                
+                int k = getch();
 
-                //int k = 1;//waitkey("");// rand() % 99;
-                clrscr();
-                gotoxy(x, y);
-                setrgb(rand() %16,rand() %16 );
-                printf("%i %c", k,k);
+                wclear(stdscr);
+                printw("%c", k);
 
+                refresh();
 
+                if (k == 27) //esc
+                        break;
         }
-        setrgb(-1, -1);
-        clrscr();
-        printf("EXXIT");
-        waitkey("");
+
+
+        endwin();
 }
